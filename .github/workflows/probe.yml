@@ -28,7 +28,7 @@ jobs:
       - name: Keep the result
         run: |
           git config user.name "flo status"
-          git config user.email "tech@fastflowup.com"
+          git config user.email "support@fastflowup.com"
           git add status.json
           git diff --cached --quiet || git commit -m "chore: status $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
