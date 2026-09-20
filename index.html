@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flo status</title>
+<meta name="description" content="Whether Flo is answering right now, checked every five minutes.">
+<style>
+  :root { color-scheme: light dark; --bg:#fafafa; --card:#fff; --ink:#16181c; --muted:#656870; --line:#e4e4e7; --brand:#6b21a8; --up:#15803d; --up-bg:#dcfce7; --down:#b91c1c; --down-bg:#fee2e2; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0c0f; --card:#17181d; --ink:#eff0f3; --muted:#9da1ac; --line:#2a2c33; --up:#4ade80; --up-bg:#052e16; --down:#f87171; --down-bg:#450a0a; } }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 Inter, system-ui, -apple-system, "Segoe UI", sans-serif }
+  .wrap { max-width:820px; margin:0 auto; padding:40px 16px 64px }
+  h1 { margin:0; font-size:28px; line-height:1.2; letter-spacing:-.015em }
+  .overall { margin-top:20px; padding:18px 20px; border-radius:16px; border:1px solid var(--line); background:var(--card); display:flex; gap:12px; align-items:center; flex-wrap:wrap }
+  .dot { width:12px; height:12px; border-radius:50%; flex:none }
+  .up .dot { background:var(--up) } .down .dot { background:var(--down) }
+  .overall strong { font-size:18px }
+  .checked { color:var(--muted); font-size:14px; margin-top:6px }
+  ul { list-style:none; margin:24px 0 0; padding:0; border:1px solid var(--line); border-radius:16px; overflow:hidden; background:var(--card) }
+  li { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--line); flex-wrap:wrap }
+  li:last-child { border-bottom:0 }
+  .name { font-weight:600 }
+  .meta { color:var(--muted); font-size:14px }
+  .pill { font-size:13px; font-weight:600; border-radius:999px; padding:3px 10px; white-space:nowrap }
+  .pill.up { color:var(--up); background:var(--up-bg) } .pill.down { color:var(--down); background:var(--down-bg) }
+  .bars { display:flex; gap:2px; margin-top:8px; width:100%; }
+  .bars span { flex:1; height:22px; border-radius:2px; background:var(--up); opacity:.75 }
+  .bars span.down { background:var(--down); opacity:1 }
+  .bars span.none { background:var(--line) }
+  footer { margin-top:28px; color:var(--muted); font-size:14px }
+  a { color:var(--brand) }
+  @media (prefers-color-scheme: dark) { a { color:#c38ee2 } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Flo status</h1>
+  <p class="checked" id="checked">Loading the latest check.</p>
+  <div class="overall" id="overall"><span class="dot"></span><strong id="overall-text">Checking</strong></div>
+  <ul id="services"></ul>
+  <footer>
+    <p>Every service is checked every five minutes from outside Flo's own hosting, so an outage cannot take this page down with it. The bars show the last twenty four hours, newest on the right.</p>
+    <p>This page is served by GitHub Pages and is independent of the hosting Flo runs on. It still depends on DNS, which Flo shares.</p>
+    <p>Something wrong that is not shown here? Write to <a href="mailto:tech@fastflowup.com">tech@fastflowup.com</a>.</p>
+  </footer>
+</div>
+<script>
+const ago = (iso) => {
+  const seconds = Math.round((Date.now() - Date.parse(iso)) / 1000)
+  if (seconds < 90) return seconds + ' seconds ago'
+  const minutes = Math.round(seconds / 60)
+  if (minutes < 90) return minutes + ' minutes ago'
+  return Math.round(minutes / 60) + ' hours ago'
+}
+fetch('status.json?' + Date.now()).then((r) => r.json()).then((data) => {
+  document.getElementById('checked').textContent = 'Checked ' + ago(data.checkedAt) + '.'
+  const overall = document.getElementById('overall')
+  overall.className = 'overall ' + (data.allUp ? 'up' : 'down')
+  document.getElementById('overall-text').textContent = data.allUp ? 'Everything is answering' : data.overall
+  const list = document.getElementById('services')
+  for (const service of Object.values(data.services)) {
+    const item = document.createElement('li')
+    const left = document.createElement('div')
+    left.innerHTML = '<div class="name"></div><div class="meta"></div>'
+    left.querySelector('.name').textContent = service.name
+    const uptime = service.uptimeDay === null ? 'no checks yet' : service.uptimeDay + ' percent of checks answered today'
+    left.querySelector('.meta').textContent = uptime + (service.up ? ' · ' + service.ms + ' ms' : '')
+    const pill = document.createElement('span')
+    pill.className = 'pill ' + (service.up ? 'up' : 'down')
+    pill.textContent = service.up ? 'Answering' : 'Not answering'
+    const bars = document.createElement('div')
+    bars.className = 'bars'
+    const day = service.history.slice(-288)
+    const padding = 288 - day.length
+    for (let i = 0; i < padding; i++) { const b = document.createElement('span'); b.className = 'none'; bars.appendChild(b) }
+    for (const point of day) { const b = document.createElement('span'); if (!point.up) b.className = 'down'; b.title = point.at; bars.appendChild(b) }
+    item.append(left, pill, bars)
+    list.appendChild(item)
+  }
+}).catch(() => {
+  document.getElementById('overall-text').textContent = 'The latest check could not be loaded.'
+})
+</script>
+</body>
+</html>

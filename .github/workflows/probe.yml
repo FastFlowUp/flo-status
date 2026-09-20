@@ -1,0 +1,39 @@
+name: probe
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: node scripts/probe.mjs
+      - name: Keep the result
+        run: |
+          git config user.name "flo status"
+          git config user.email "tech@fastflowup.com"
+          git add status.json
+          git diff --cached --quiet || git commit -m "chore: status $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4

@@ -1,0 +1,167 @@
+{
+  "checkedAt": "2026-09-20T03:06:28.519Z",
+  "overall": "9 of 10 not answering",
+  "allUp": false,
+  "services": {
+    "web": {
+      "name": "Website",
+      "url": "https://flo.now/",
+      "up": false,
+      "status": 404,
+      "ms": 231,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 231
+        }
+      ]
+    },
+    "app": {
+      "name": "Sign in and launcher",
+      "url": "https://app.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 256,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 256
+        }
+      ]
+    },
+    "inbox": {
+      "name": "Inbox",
+      "url": "https://inbox.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 251,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 251
+        }
+      ]
+    },
+    "cloud": {
+      "name": "Cloud",
+      "url": "https://cloud.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 252,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 252
+        }
+      ]
+    },
+    "calendar": {
+      "name": "Calendar",
+      "url": "https://calendar.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 249,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 249
+        }
+      ]
+    },
+    "live": {
+      "name": "Live",
+      "url": "https://live.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 178,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 178
+        }
+      ]
+    },
+    "book": {
+      "name": "Book",
+      "url": "https://book.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 223,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 223
+        }
+      ]
+    },
+    "console": {
+      "name": "Console",
+      "url": "https://console.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 226,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 226
+        }
+      ]
+    },
+    "developers": {
+      "name": "Developers",
+      "url": "https://developers.flo.now/api/health",
+      "up": false,
+      "status": 404,
+      "ms": 169,
+      "uptimeDay": 0,
+      "uptimeRange": 0,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": false,
+          "ms": 169
+        }
+      ]
+    },
+    "worker": {
+      "name": "Mail and background work",
+      "url": "https://worker.flo.now/health",
+      "up": true,
+      "status": 200,
+      "ms": 148,
+      "uptimeDay": 100,
+      "uptimeRange": 100,
+      "history": [
+        {
+          "at": "2026-09-20T03:06:28.519Z",
+          "up": true,
+          "ms": 148
+        }
+      ]
+    }
+  }
+}
