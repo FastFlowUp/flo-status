@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-04T00:35:12.970Z",
+  "checkedAt": "2026-10-04T06:18:24.333Z",
   "overall": "all services are answering",
   "allUp": true,
   "services": {
@@ -8,9 +8,9 @@
       "url": "https://flo.now/",
       "up": true,
       "status": 200,
-      "ms": 244,
+      "ms": 1031,
       "uptimeDay": 100,
-      "uptimeRange": 79.3,
+      "uptimeRange": 79.5,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -421,6 +421,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 244
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 1031
         }
       ]
     },
@@ -429,7 +434,7 @@
       "url": "https://app.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 771,
+      "ms": 623,
       "uptimeDay": 100,
       "uptimeRange": 97.6,
       "history": [
@@ -842,6 +847,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 771
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 623
         }
       ]
     },
@@ -850,9 +860,9 @@
       "url": "https://inbox.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 913,
+      "ms": 512,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -1263,6 +1273,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 913
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 512
         }
       ]
     },
@@ -1271,9 +1286,9 @@
       "url": "https://cloud.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 570,
+      "ms": 712,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -1684,6 +1699,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 570
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 712
         }
       ]
     },
@@ -1692,9 +1712,9 @@
       "url": "https://calendar.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 704,
+      "ms": 909,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -2105,6 +2125,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 704
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 909
         }
       ]
     },
@@ -2113,9 +2138,9 @@
       "url": "https://live.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 547,
+      "ms": 810,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -2526,6 +2551,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 547
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 810
         }
       ]
     },
@@ -2534,9 +2564,9 @@
       "url": "https://book.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 1038,
+      "ms": 1353,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -2947,6 +2977,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 1038
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 1353
         }
       ]
     },
@@ -2955,9 +2990,9 @@
       "url": "https://console.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 625,
+      "ms": 934,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -3368,6 +3403,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 625
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 934
         }
       ]
     },
@@ -3376,9 +3416,9 @@
       "url": "https://developers.flo.now/api/health",
       "up": true,
       "status": 200,
-      "ms": 552,
+      "ms": 988,
       "uptimeDay": 100,
-      "uptimeRange": 96.3,
+      "uptimeRange": 96.4,
       "history": [
         {
           "at": "2026-09-20T03:06:28.519Z",
@@ -3789,6 +3829,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 552
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 988
         }
       ]
     },
@@ -3797,7 +3842,7 @@
       "url": "https://worker.flo.now/health",
       "up": true,
       "status": 200,
-      "ms": 1022,
+      "ms": 1008,
       "uptimeDay": 100,
       "uptimeRange": 98.8,
       "history": [
@@ -4210,6 +4255,11 @@
           "at": "2026-10-04T00:35:12.970Z",
           "up": true,
           "ms": 1022
+        },
+        {
+          "at": "2026-10-04T06:18:24.333Z",
+          "up": true,
+          "ms": 1008
         }
       ]
     }
